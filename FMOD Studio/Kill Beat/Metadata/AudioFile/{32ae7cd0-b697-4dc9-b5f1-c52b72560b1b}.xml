@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{32ae7cd0-b697-4dc9-b5f1-c52b72560b1b}">
+		<property name="assetPath">
+			<value>sfx/SCIEnrg - Shield Low Hit 2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5a103be6-08ce-41cb-8509-3475a9709ecd}</destination>
+		</relationship>
+	</object>
+</objects>
