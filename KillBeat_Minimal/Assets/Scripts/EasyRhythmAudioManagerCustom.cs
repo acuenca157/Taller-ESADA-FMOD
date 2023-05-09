@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
+// using FMODUnity;
 
 public class EasyRhythmAudioManagerCustom : MonoBehaviour
 {
 
+   /*
     // FMOD
     public EventReference event90, event120v1, event120v2, event140, eventLobby, eventDie, eventIntro, eventNone; // Game Music Event
     public EasyEvent myAudioEvent; // EasyEvent is the object that will play the FMOD audio event, and provide our callbacks and other related info
@@ -50,4 +51,5 @@ public class EasyRhythmAudioManagerCustom : MonoBehaviour
         }
         myAudioEvent.start();
     }
+    */
 }

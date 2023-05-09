@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
+// using FMODUnity;
 
-public class GunController : MonoBehaviour, IEasyListener
+//public class GunController : MonoBehaviour, IEasyListener
+public class GunController : MonoBehaviour
 {
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
     public float bulletSpeed = 10;
-    [SerializeField] private EventReference upgradeEvent;
     private LevelsController lvlController;
     private Camera myCamera;
 
@@ -16,6 +16,22 @@ public class GunController : MonoBehaviour, IEasyListener
     {
         myCamera = Camera.main;
         lvlController = FindAnyObjectByType<LevelsController>();
+
+        StartCoroutine(shootLoop());
+    }
+
+    //public void OnBeat(EasyEvent audioEvent)
+    //{
+    //    Shoot();
+    //}
+
+    private IEnumerator shootLoop()
+    {
+        while (true)
+        {
+            Shoot();
+            yield return new WaitForSeconds(0.3f);
+        }
     }
 
     public void Shoot() {
@@ -26,16 +42,10 @@ public class GunController : MonoBehaviour, IEasyListener
         }
     }
 
-    public void upgradeWeapon(int lvl) {
-        FMODUnity.RuntimeManager.PlayOneShot(upgradeEvent);
-    }
-
-    public void OnBeat(EasyEvent audioEvent) 
-	{ 
-        Shoot();
-	}
     private void Update()
     {
         myCamera.fieldOfView = Mathf.Lerp(myCamera.fieldOfView, 70f, 0.5f);
     }
+
+    
 }

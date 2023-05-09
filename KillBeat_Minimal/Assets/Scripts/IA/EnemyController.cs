@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations;
-using FMODUnity;
+// using FMODUnity;
 
 public class EnemyController : MonoBehaviour
 {
@@ -18,8 +18,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float damageWaitTime = 0.5f;
     [Range(0f, 5f)] [SerializeField] private float attackRadio = 2f;
     [Range(0f, 10f)] [SerializeField] private float seeRadio = 5f;
-    [SerializeField] private EventReference eventMuere;
-    [SerializeField] private EventReference eventDamage;
+    // [SerializeField] private EventReference eventMuere, eventDamage;
     [HideInInspector] public bool seenPlayer = false;
 
     private bool muerto = false;
@@ -47,20 +46,16 @@ public class EnemyController : MonoBehaviour
         if (!muerto)
         {
             seenPlayer = true;
-            FMODUnity.RuntimeManager.PlayOneShotAttached(eventDamage, this.transform.gameObject);
+            // FMODUnity.RuntimeManager.PlayOneShotAttached(eventDamage, this.transform.gameObject);
             vidaActual -= damage;
             if (vidaActual <= 0)
             {
-                FMODUnity.RuntimeManager.PlayOneShotAttached(eventMuere, this.transform.gameObject);
+                // FMODUnity.RuntimeManager.PlayOneShotAttached(eventMuere, this.transform.gameObject);
                 muerto = true;
                 lvlController.killEnemy();
                 Destroy(this.gameObject);
             }
         }
-    }
-
-    public void hulkAplasta() {
-        Destroy(this.gameObject);
     }
 
     IEnumerator damagePlayer() {

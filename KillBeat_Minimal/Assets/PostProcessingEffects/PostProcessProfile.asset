@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PostProcessProfile
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 2950439558047778511}
+  - {fileID: 3095743559819222844}
 --- !u!114 &2950439558047778511
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -48,6 +48,46 @@ MonoBehaviour:
   sampleDist:
     overrideState: 1
     value: 1.3
+  edgesOnly:
+    overrideState: 0
+    value: 0
+  edgesOnlyBgColor:
+    overrideState: 0
+    value: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &3095743559819222844
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1905ad603bb9a479914accad762e92, type: 3}
+  m_Name: EdgeDetect_BeforeTransparent
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  mode:
+    overrideState: 1
+    value: 0
+  sensitivityDepth:
+    overrideState: 1
+    value: 0.3
+  sensitivityNormals:
+    overrideState: 0
+    value: 1
+  lumThreshold:
+    overrideState: 0
+    value: 0.2
+  edgeExp:
+    overrideState: 0
+    value: 1
+  sampleDist:
+    overrideState: 1
+    value: 0.5
   edgesOnly:
     overrideState: 0
     value: 0

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
-using FMODUnity;
+// using FMODUnity;
 
 public class NewPlayerLifeController : MonoBehaviour
 {
-    [SerializeField] private EventReference damageEvent, dieEvent;
+    // [SerializeField] private EventReference damageEvent, dieEvent;
     [SerializeField] private PostProcessVolume volume;
     [SerializeField] private GameObject[] lifeCubes;
 
@@ -31,7 +31,7 @@ public class NewPlayerLifeController : MonoBehaviour
     }
 
     public void damagePlayer(int dmgAmt) {
-        FMODUnity.RuntimeManager.PlayOneShot(damageEvent);
+        // FMODUnity.RuntimeManager.PlayOneShot(damageEvent);
         actualLife -= dmgAmt;
         if (actualLife <= 0) {
             die();
@@ -70,13 +70,13 @@ public class NewPlayerLifeController : MonoBehaviour
     }
 
     private void die() {
-        FMODUnity.RuntimeManager.PlayOneShot(dieEvent);
+        // FMODUnity.RuntimeManager.PlayOneShot(dieEvent);
         FindObjectOfType<Movement>().canMove = false;
         FindObjectOfType<LevelsController>().diePlayer();
     }
 
     private void Update()
     {
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("health", actualLife);
+        // FMODUnity.RuntimeManager.StudioSystem.setParameterByName("health", actualLife);
     }
 }

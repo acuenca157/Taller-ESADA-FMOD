@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
+// using FMODUnity;
 
 public class HealAndNext : MonoBehaviour
 {
@@ -9,7 +9,6 @@ public class HealAndNext : MonoBehaviour
     Transform playerTransform;
     GunController gunController;
     LevelsController levelController;
-    [SerializeField] private EventReference healEvent;
     [SerializeField] private GameObject text;
 
     private void Start()
@@ -28,7 +27,6 @@ public class HealAndNext : MonoBehaviour
             text.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                FMODUnity.RuntimeManager.PlayOneShot(healEvent);
                 levelController.pickedHeal();
                 Destroy(this.gameObject);
             }
